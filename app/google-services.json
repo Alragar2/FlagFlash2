@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "140100141028",
+    "firebase_url": "https://flag-flash-tfg-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "flag-flash-tfg",
+    "storage_bucket": "flag-flash-tfg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140100141028:android:21573925c4c85c253891f1",
+        "android_client_info": {
+          "package_name": "alragar2.FlagFlash2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140100141028-15sjo0njh4c7o76i3vdje1mqofoefngk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxCXiQ-APrScD-dGwplrwzKOwoBnaOvGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140100141028-15sjo0njh4c7o76i3vdje1mqofoefngk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140100141028:android:ceca93143e35716f3891f1",
+        "android_client_info": {
+          "package_name": "alragar2.isi3.uv.flagflash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140100141028-15sjo0njh4c7o76i3vdje1mqofoefngk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxCXiQ-APrScD-dGwplrwzKOwoBnaOvGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140100141028-15sjo0njh4c7o76i3vdje1mqofoefngk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6281701644214410~5770125711"
+    }
+  ],
+  "configuration_version": "1"
+}
