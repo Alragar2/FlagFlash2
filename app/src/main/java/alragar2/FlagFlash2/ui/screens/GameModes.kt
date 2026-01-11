@@ -2,7 +2,7 @@ package alragar2.FlagFlash2.ui.screens
 
 import alragar2.FlagFlash2.data.GameModesData
 import alragar2.FlagFlash2.R
-import alragar2.FlagFlash2.ui.components.GameSectionCard // Importamos el componente nuevo
+import alragar2.FlagFlash2.ui.components.GameSectionCard
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import alragar2.FlagFlash2.ui.model.GameMode
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.*
 
 
 @Composable
@@ -30,7 +32,8 @@ fun GameModesScreen(navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 48.dp, start = 16.dp, end = 16.dp, bottom = 16.dp) // Ajuste de márgenes
+            .padding(WindowInsets.systemBars.asPaddingValues())
+            .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 16.dp) // Ajuste de márgenes
     ) {
 
         // 1. Título principal

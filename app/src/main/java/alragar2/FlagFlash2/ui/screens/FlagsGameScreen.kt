@@ -36,6 +36,7 @@ fun FlagsGameScreen(gameViewModel: FlagsGameViewModel = viewModel()) {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(WindowInsets.systemBars.asPaddingValues())
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
@@ -106,8 +107,6 @@ fun GameStatus(currentQuestion: Int, totalQuestions: Int, lives: Int) {
 @Preview(showBackground = true)
 @Composable
 fun FlagsGameScreenPreview() {
-    // Para el preview, no usamos el ViewModel real para evitar dependencias complejas.
-    // Simulamos el estado.
     Column(
         modifier = Modifier
             .fillMaxSize()

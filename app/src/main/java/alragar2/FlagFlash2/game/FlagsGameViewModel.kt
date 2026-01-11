@@ -5,6 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import alragar2.FlagFlash2.data.FlagQuestion
 import alragar2.FlagFlash2.data.flagsQuestions
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 
 class FlagsGameViewModel : ViewModel() {
 
