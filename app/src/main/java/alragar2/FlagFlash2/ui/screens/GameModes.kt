@@ -1,8 +1,9 @@
 package alragar2.FlagFlash2.ui.screens
 
 import alragar2.FlagFlash2.data.GameModesData
-import alragar2.FlagFlash2.R
+import alragar2.FlagFlash2.ui.components.GameModeCard
 import alragar2.FlagFlash2.ui.components.GameSectionCard
+import android.util.Log
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -12,14 +13,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import alragar2.FlagFlash2.ui.model.GameMode
-import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 
 
 @Composable
@@ -27,13 +27,15 @@ fun GameModesScreen(navController: NavController) {
     // Datos
     val singlePlayerModes = GameModesData.singlePlayerModes
     val multiPlayerModes = GameModesData.multiPlayerModes
+    val themes = GameModesData.themes
+
 
     // UI Principal
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(WindowInsets.systemBars.asPaddingValues())
-            .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 16.dp) // Ajuste de márgenes
+            .windowInsetsPadding(WindowInsets.systemBars),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
         // 1. Título principal
@@ -45,11 +47,39 @@ fun GameModesScreen(navController: NavController) {
             )
         }
 
+        item {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState()),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Spacer(modifier = Modifier.width(16.dp))
+
+                // Iteramos sobre los modos y creamos una tarjeta para cada uno
+                singlePlayerModes.forEach { gameMode ->
+                    GameModeCard( // Un Composable más simple para una tarjeta individual
+                        title = gameMode.title,
+                        // Aquí iría una acción de click, por ejemplo
+                        onClick = { Log.d("GameMode", "Clicked on ${gameMode.title}") }
+                    )
+                }
+
+                // Espaciador final para que la última tarjeta no quede pegada al borde derecho
+                Spacer(modifier = Modifier.width(16.dp))
+            }
+        }
+
+        // Espaciador
+        item {
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
         // 2. Tarjeta Un Jugador
         item {
             GameSectionCard(
-                title = "Un Jugador",
-                modes = singlePlayerModes,
+                title = "Tematicas",
+                modes = GameModesData.themes,
                 navController = navController
             )
         }
@@ -59,14 +89,6 @@ fun GameModesScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(24.dp))
         }
 
-        // 3. Tarjeta Multijugador
-        item {
-            GameSectionCard(
-                title = "Multijugador",
-                modes = multiPlayerModes,
-                navController = navController
-            )
-        }
 
         // Espaciador final para que no se corte abajo
         item {
