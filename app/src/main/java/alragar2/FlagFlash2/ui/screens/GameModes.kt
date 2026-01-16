@@ -1,6 +1,7 @@
 package alragar2.FlagFlash2.ui.screens
 
 import alragar2.FlagFlash2.data.GameModesData
+import alragar2.FlagFlash2.data.GameModesData.singlePlayerModes
 import alragar2.FlagFlash2.ui.components.GameModeCard
 import alragar2.FlagFlash2.ui.components.GameSectionCard
 import android.util.Log
@@ -25,8 +26,7 @@ import androidx.compose.foundation.rememberScrollState
 @Composable
 fun GameModesScreen(navController: NavController) {
     // Datos
-    val singlePlayerModes = GameModesData.singlePlayerModes
-    val multiPlayerModes = GameModesData.multiPlayerModes
+    val singlePlayerModes = singlePlayerModes
     val themes = GameModesData.themes
 
 
@@ -79,7 +79,7 @@ fun GameModesScreen(navController: NavController) {
         item {
             GameSectionCard(
                 title = "Tematicas",
-                modes = GameModesData.themes,
+                modes = themes,
                 navController = navController
             )
         }
